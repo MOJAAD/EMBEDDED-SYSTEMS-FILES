@@ -1,0 +1,21 @@
+"--endian=little" 
+
+"--cpu=Cortex-M4" 
+
+"--fpu=VFPv4_SP" 
+
+"-p" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\CONFIG\debugger\TexasInstruments\LM4F120H5QR.ddf" 
+
+"--drv_verify_download" 
+
+"--semihosting" 
+
+"--device=LM4F120H5QR" 
+
+"--drv_interface_speed=500" 
+
+
+
+
