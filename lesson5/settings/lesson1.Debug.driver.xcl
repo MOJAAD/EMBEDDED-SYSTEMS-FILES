@@ -1,0 +1,19 @@
+"--endian=little" 
+
+"--cpu=Cortex-A7" 
+
+"--fpu=None" 
+
+"-p" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\CONFIG\debugger\Broadcom\BCM2836RIFBG.ddf" 
+
+"--semihosting" 
+
+"--device=BCM2836RIFBG" 
+
+"--multicore_nr_of_cores=1" 
+
+
+
+

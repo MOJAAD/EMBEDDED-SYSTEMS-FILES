@@ -5,33 +5,33 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
-            <file>$PROJ_DIR$\main.c</file>
-            <file>$PROJ_DIR$\Debug\Obj\lesson1.pbd</file>
-            <file>$PROJ_DIR$\Debug\List\lesson1.map</file>
-            <file>$PROJ_DIR$\Debug\Exe\lesson1.out</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
-            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-            <file>$TOOLKIT_DIR$\config\linker\Broadcom\BCM2836RIFBG.icf</file>
             <file>$TOOLKIT_DIR$\lib\sh7Sxs_l.a</file>
-            <file>$TOOLKIT_DIR$\lib\rt7Sx_tl.a</file>
             <file>$TOOLKIT_DIR$\lib\m7Sx_tl.a</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+            <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
             <file>$TOOLKIT_DIR$\lib\dl7Sx_tln.a</file>
+            <file>$TOOLKIT_DIR$\config\linker\Broadcom\BCM2836RIFBG.icf</file>
+            <file>$PROJ_DIR$\Debug\Exe\lesson1.out</file>
+            <file>$TOOLKIT_DIR$\lib\rt7Sx_tl.a</file>
+            <file>$PROJ_DIR$\Debug\List\lesson1.map</file>
+            <file>$PROJ_DIR$\Debug\Obj\lesson1.pbd</file>
+            <file>$PROJ_DIR$\Debug\Obj\main.o</file>
         </outputs>
         <file>
             <name>$PROJ_DIR$\main.c</name>
             <outputs>
                 <tool>
                     <name>__cstat</name>
-                    <file> 5</file>
+                    <file> 4</file>
                 </tool>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 0</file>
+                    <file> 11</file>
                 </tool>
                 <tool>
                     <name>BICOMP</name>
-                    <file> 6</file>
+                    <file> 2</file>
                 </tool>
             </outputs>
         </file>
@@ -40,13 +40,13 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 3</file>
+                    <file> 9</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 7 0 8 9 10 11</file>
+                    <file> 6 11 0 8 1 5</file>
                 </tool>
             </inputs>
         </file>
@@ -55,7 +55,7 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 4 3</file>
+                    <file> 9 7</file>
                 </tool>
             </outputs>
         </file>

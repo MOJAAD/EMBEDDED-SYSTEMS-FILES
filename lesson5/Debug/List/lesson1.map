@@ -1,22 +1,22 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.22.1.15669/W32 for ARM                25/Jul/2020  13:59:35
+# IAR ELF Linker V8.22.1.15669/W32 for ARM                25/Jul/2020  16:22:29
 # Copyright 2007-2018 IAR Systems AB.
 #
 #    Output file  =  
 #        C:\Users\BLUE
-#        COM\Desktop\project\embeded_programming\lesson4\Debug\Exe\lesson1.out
+#        COM\Desktop\project\embeded_programming\lesson5\Debug\Exe\lesson1.out
 #    Map file     =  
 #        C:\Users\BLUE
-#        COM\Desktop\project\embeded_programming\lesson4\Debug\List\lesson1.map
+#        COM\Desktop\project\embeded_programming\lesson5\Debug\List\lesson1.map
 #    Command line =  
-#        -f C:\Users\BLUECO~1\AppData\Local\Temp\EWB3FC.tmp ("C:\Users\BLUE
-#        COM\Desktop\project\embeded_programming\lesson4\Debug\Obj\main.o" -o
+#        -f C:\Users\BLUECO~1\AppData\Local\Temp\EW89EE.tmp ("C:\Users\BLUE
+#        COM\Desktop\project\embeded_programming\lesson5\Debug\Obj\main.o" -o
 #        "C:\Users\BLUE
-#        COM\Desktop\project\embeded_programming\lesson4\Debug\Exe\lesson1.out"
+#        COM\Desktop\project\embeded_programming\lesson5\Debug\Exe\lesson1.out"
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
 #        --map "C:\Users\BLUE
-#        COM\Desktop\project\embeded_programming\lesson4\Debug\List\lesson1.map"
+#        COM\Desktop\project\embeded_programming\lesson5\Debug\List\lesson1.map"
 #        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
 #        8.0\arm\config\linker\Broadcom\BCM2836RIFBG.icf" --semihosting --entry
 #        __iar_program_start --vfe --text_out locale)
@@ -70,27 +70,27 @@ No sections matched the following patterns:
   .intvec      ro code  0x00008000     0x3c  cstartup.o [4]
                       - 0x0000803c     0x3c
 
-"P1-P2", part 1 of 2:                 0x110
-  .text        ro code  0x0000803c     0x58  cstartup.o [4]
-  .text        ro code  0x00008094     0x30  cmain.o [4]
-  .text        ro code  0x000080c4      0x4  low_level_init.o [3]
-  .text        ro code  0x000080c8     0x4c  main.o [1]
-  Veneer       ro code  0x00008114      0x8  - Linker created -
-  .text        ro code  0x0000811c      0x4  exit.o [3]
-  .text        ro code  0x00008120     0x14  exit.o [5]
-  .text        ro code  0x00008134     0x10  cexit.o [4]
-  .text        ro code  0x00008144      0x4  vectortrap.o [4]
-  .text        ro code  0x00008148      0x4  xreturnswi.o [5]
-                      - 0x0000814c    0x110
+"P1-P2", part 1 of 2:                 0x120
+  .text        ro code  0x0000803c     0x5c  main.o [1]
+  .text        ro code  0x00008098     0x58  cstartup.o [4]
+  .text        ro code  0x000080f0     0x30  cmain.o [4]
+  .text        ro code  0x00008120      0x4  low_level_init.o [3]
+  Veneer       ro code  0x00008124      0x8  - Linker created -
+  .text        ro code  0x0000812c      0x4  exit.o [3]
+  .text        ro code  0x00008130     0x14  exit.o [5]
+  .text        ro code  0x00008144     0x10  cexit.o [4]
+  .text        ro code  0x00008154      0x4  vectortrap.o [4]
+  .text        ro code  0x00008158      0x4  xreturnswi.o [5]
+                      - 0x0000815c    0x120
 
 "P1-P2", part 2 of 2:               0x18000
-  CSTACK                0x00008150  0x10000  <Block>
-    CSTACK     uninit   0x00008150  0x10000  <Block tail>
-  IRQ_STACK             0x00018150   0x4000  <Block>
-    IRQ_STACK  uninit   0x00018150   0x4000  <Block tail>
-  FIQ_STACK             0x0001c150   0x4000  <Block>
-    FIQ_STACK  uninit   0x0001c150   0x4000  <Block tail>
-                      - 0x00020150  0x18000
+  CSTACK                0x00008160  0x10000  <Block>
+    CSTACK     uninit   0x00008160  0x10000  <Block tail>
+  IRQ_STACK             0x00018160   0x4000  <Block>
+    IRQ_STACK  uninit   0x00018160   0x4000  <Block tail>
+  FIQ_STACK             0x0001c160   0x4000  <Block>
+    FIQ_STACK  uninit   0x0001c160   0x4000  <Block tail>
+                      - 0x00020160  0x18000
 
 
 
@@ -100,10 +100,10 @@ No sections matched the following patterns:
 
     Module            ro code  rw data
     ------            -------  -------
-C:\Users\BLUE COM\Desktop\project\embeded_programming\lesson4\Debug\Obj: [1]
-    main.o                 76
+C:\Users\BLUE COM\Desktop\project\embeded_programming\lesson5\Debug\Obj: [1]
+    main.o                 92
     ----------------------------------
-    Total:                 76
+    Total:                 92
 
 command line: [2]
     ----------------------------------
@@ -131,7 +131,7 @@ sh7Sxs_l.a: [5]
 
     Linker created          8   98 304
 --------------------------------------
-    Grand Total:          332   98 304
+    Grand Total:          348   98 304
 
 
 *******************************************************************************
@@ -140,43 +140,43 @@ sh7Sxs_l.a: [5]
 
 Entry                      Address  Size  Type      Object
 -----                      -------  ----  ----      ------
-?main                   0x00008094        Code  Gb  cmain.o [4]
-Abort_Handler           0x00008144        Code  Wk  vectortrap.o [4]
-CSTACK$$Base            0x00008150         --   Gb  - Linker created -
-CSTACK$$Limit           0x00018150         --   Gb  - Linker created -
-FIQ_Handler             0x00008144        Code  Wk  vectortrap.o [4]
-FIQ_STACK$$Base         0x0001c150         --   Gb  - Linker created -
-FIQ_STACK$$Limit        0x00020150         --   Gb  - Linker created -
-IRQ_Handler             0x00008144        Code  Wk  vectortrap.o [4]
-IRQ_STACK$$Base         0x00018150         --   Gb  - Linker created -
-IRQ_STACK$$Limit        0x0001c150         --   Gb  - Linker created -
-Prefetch_Handler        0x00008144        Code  Wk  vectortrap.o [4]
+?main                   0x000080f0        Code  Gb  cmain.o [4]
+Abort_Handler           0x00008154        Code  Wk  vectortrap.o [4]
+CSTACK$$Base            0x00008160         --   Gb  - Linker created -
+CSTACK$$Limit           0x00018160         --   Gb  - Linker created -
+FIQ_Handler             0x00008154        Code  Wk  vectortrap.o [4]
+FIQ_STACK$$Base         0x0001c160         --   Gb  - Linker created -
+FIQ_STACK$$Limit        0x00020160         --   Gb  - Linker created -
+IRQ_Handler             0x00008154        Code  Wk  vectortrap.o [4]
+IRQ_STACK$$Base         0x00018160         --   Gb  - Linker created -
+IRQ_STACK$$Limit        0x0001c160         --   Gb  - Linker created -
+Prefetch_Handler        0x00008154        Code  Wk  vectortrap.o [4]
 Region$$Table$$Base     0x00000000         --   Gb  - Linker created -
 Region$$Table$$Limit    0x00000000         --   Gb  - Linker created -
-SWI_Handler             0x00008144        Code  Wk  vectortrap.o [4]
-Undefined_Handler       0x00008144        Code  Wk  vectortrap.o [4]
-__cmain                 0x00008094        Code  Gb  cmain.o [4]
-__exit                  0x00008121  0x14  Code  Gb  exit.o [5]
-__iar_program_start     0x0000803c        Code  Gb  cstartup.o [4]
-__iar_return_from_swi   0x00008148   0x4  Code  Gb  xreturnswi.o [5]
+SWI_Handler             0x00008154        Code  Wk  vectortrap.o [4]
+Undefined_Handler       0x00008154        Code  Wk  vectortrap.o [4]
+__cmain                 0x000080f0        Code  Gb  cmain.o [4]
+__exit                  0x00008131  0x14  Code  Gb  exit.o [5]
+__iar_program_start     0x00008098        Code  Gb  cstartup.o [4]
+__iar_return_from_swi   0x00008158   0x4  Code  Gb  xreturnswi.o [5]
 __iar_systems$$module {Abs}
                         0x00000001        Data  Gb  command line/config [2]
-__low_level_init        0x000080c5   0x4  Code  Gb  low_level_init.o [3]
+__low_level_init        0x00008121   0x4  Code  Gb  low_level_init.o [3]
 __vector                0x00008000        Data  Gb  cstartup.o [4]
-_call_main              0x000080ac        Code  Gb  cmain.o [4]
-_exit                   0x00008134        Code  Gb  cexit.o [4]
-_main                   0x000080b4        Code  Gb  cmain.o [4]
-exit                    0x0000811d   0x4  Code  Gb  exit.o [3]
-main                    0x000080c9  0x4c  Code  Gb  main.o [1]
+_call_main              0x00008108        Code  Gb  cmain.o [4]
+_exit                   0x00008144        Code  Gb  cexit.o [4]
+_main                   0x00008110        Code  Gb  cmain.o [4]
+exit                    0x0000812d   0x4  Code  Gb  exit.o [3]
+main                    0x0000803d  0x5c  Code  Gb  main.o [1]
 
 
-[1] = C:\Users\BLUE COM\Desktop\project\embeded_programming\lesson4\Debug\Obj
+[1] = C:\Users\BLUE COM\Desktop\project\embeded_programming\lesson5\Debug\Obj
 [2] = command line
 [3] = dl7Sx_tln.a
 [4] = rt7Sx_tl.a
 [5] = sh7Sxs_l.a
 
-     332 bytes of readonly  code memory
+     348 bytes of readonly  code memory
   98 304 bytes of readwrite data memory
 
 Errors: none
