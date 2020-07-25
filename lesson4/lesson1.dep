@@ -41,6 +41,10 @@
                     <file> 3</file>
                 </tool>
                 <tool>
+                    <name>ICCARM</name>
+                    <file> 4</file>
+                </tool>
+                <tool>
                     <name>BICOMP</name>
                     <file> 7</file>
                 </tool>
