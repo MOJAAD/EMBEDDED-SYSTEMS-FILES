@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.22.1.15669/W32 for ARM                25/Jul/2020  16:22:29
+# IAR ELF Linker V8.22.1.15669/W32 for ARM                25/Jul/2020  16:36:52
 # Copyright 2007-2018 IAR Systems AB.
 #
 #    Output file  =  
@@ -10,7 +10,7 @@
 #        C:\Users\BLUE
 #        COM\Desktop\project\embeded_programming\lesson5\Debug\List\lesson1.map
 #    Command line =  
-#        -f C:\Users\BLUECO~1\AppData\Local\Temp\EW89EE.tmp ("C:\Users\BLUE
+#        -f C:\Users\BLUECO~1\AppData\Local\Temp\EWB873.tmp ("C:\Users\BLUE
 #        COM\Desktop\project\embeded_programming\lesson5\Debug\Obj\main.o" -o
 #        "C:\Users\BLUE
 #        COM\Desktop\project\embeded_programming\lesson5\Debug\Exe\lesson1.out"
@@ -18,8 +18,8 @@
 #        --map "C:\Users\BLUE
 #        COM\Desktop\project\embeded_programming\lesson5\Debug\List\lesson1.map"
 #        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
-#        8.0\arm\config\linker\Broadcom\BCM2836RIFBG.icf" --semihosting --entry
-#        __iar_program_start --vfe --text_out locale)
+#        8.0\arm\config\linker\TexasInstruments\LM4F120H5QR.icf" --semihosting
+#        --entry __iar_program_start --vfe --text_out locale)
 #
 ###############################################################################
 
@@ -46,51 +46,40 @@ application.
 *** PLACEMENT SUMMARY
 ***
 
-"A0":  place at 0x00008000 { section .intvec };
-"P1":  place in [from 0x00008000 to 0x3effffff] { ro };
-define block CSTACK with size = 64K, alignment = 8 { };
-define block SVC_STACK with size = 16K, alignment = 8 { };
-define block IRQ_STACK with size = 16K, alignment = 8 { };
-define block FIQ_STACK with size = 16K, alignment = 8 { };
-define block UND_STACK with size = 16K, alignment = 8 { };
-define block ABT_STACK with size = 16K, alignment = 8 { };
-define block HEAP with size = 64K, alignment = 8 { };
-"P2":  place in [from 0x00008000 to 0x3effffff] {
-          rw, block CSTACK, block SVC_STACK, block IRQ_STACK, block FIQ_STACK,
-          block UND_STACK, block ABT_STACK, block HEAP };
+"A0":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x0003ffff] { ro };
+define block CSTACK with size = 2K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x20000000 to 0x20007fff] {
+          rw, block CSTACK, block HEAP };
 
 No sections matched the following patterns:
 
-  rw  in "P1-P2"
+  rw  in "P2"
 
 
-  Section      Kind        Address     Size  Object
-  -------      ----        -------     ----  ------
-"A0":                                  0x3c
-  .intvec      ro code  0x00008000     0x3c  cstartup.o [4]
-                      - 0x0000803c     0x3c
+  Section   Kind        Address   Size  Object
+  -------   ----        -------   ----  ------
+"A0":                             0x40
+  .intvec   ro code  0x00000000   0x40  vector_table_M.o [5]
+                   - 0x00000040   0x40
 
-"P1-P2", part 1 of 2:                 0x120
-  .text        ro code  0x0000803c     0x5c  main.o [1]
-  .text        ro code  0x00008098     0x58  cstartup.o [4]
-  .text        ro code  0x000080f0     0x30  cmain.o [4]
-  .text        ro code  0x00008120      0x4  low_level_init.o [3]
-  Veneer       ro code  0x00008124      0x8  - Linker created -
-  .text        ro code  0x0000812c      0x4  exit.o [3]
-  .text        ro code  0x00008130     0x14  exit.o [5]
-  .text        ro code  0x00008144     0x10  cexit.o [4]
-  .text        ro code  0x00008154      0x4  vectortrap.o [4]
-  .text        ro code  0x00008158      0x4  xreturnswi.o [5]
-                      - 0x0000815c    0x120
+"P1":                             0xd4
+  .text     ro code  0x00000040   0x5c  main.o [1]
+  .text     ro code  0x0000009c   0x22  fpinit_M.o [4]
+  .text     ro code  0x000000be    0x2  vector_table_M.o [5]
+  .text     ro code  0x000000c0   0x1e  cmain.o [5]
+  .text     ro code  0x000000de    0x4  low_level_init.o [3]
+  .text     ro code  0x000000e2    0x4  exit.o [3]
+  .text     ro code  0x000000e8    0xa  cexit.o [5]
+  .text     ro code  0x000000f4   0x14  exit.o [6]
+  .text     ro code  0x00000108    0xc  cstartup_M.o [5]
+                   - 0x00000114   0xd4
 
-"P1-P2", part 2 of 2:               0x18000
-  CSTACK                0x00008160  0x10000  <Block>
-    CSTACK     uninit   0x00008160  0x10000  <Block tail>
-  IRQ_STACK             0x00018160   0x4000  <Block>
-    IRQ_STACK  uninit   0x00018160   0x4000  <Block tail>
-  FIQ_STACK             0x0001c160   0x4000  <Block>
-    FIQ_STACK  uninit   0x0001c160   0x4000  <Block tail>
-                      - 0x00020160  0x18000
+"P2":                            0x800
+  CSTACK             0x20000000  0x800  <Block>
+    CSTACK  uninit   0x20000000  0x800  <Block tail>
+                   - 0x20000800  0x800
 
 
 
@@ -109,29 +98,34 @@ command line: [2]
     ----------------------------------
     Total:
 
-dl7Sx_tln.a: [3]
+dl7M_tln.a: [3]
     exit.o                  4
     low_level_init.o        4
     ----------------------------------
     Total:                  8
 
-rt7Sx_tl.a: [4]
-    cexit.o                16
-    cmain.o                48
-    cstartup.o            148
-    vectortrap.o            4
+m7M_tls.a: [4]
+    fpinit_M.o             34
     ----------------------------------
-    Total:                216
+    Total:                 34
 
-sh7Sxs_l.a: [5]
+rt7M_tl.a: [5]
+    cexit.o                10
+    cmain.o                30
+    cstartup_M.o           12
+    vector_table_M.o       66
+    ----------------------------------
+    Total:                118
+
+shb_l.a: [6]
     exit.o                 20
-    xreturnswi.o            4
     ----------------------------------
-    Total:                 24
+    Total:                 20
 
-    Linker created          8   98 304
+    Gaps                    4
+    Linker created               2 048
 --------------------------------------
-    Grand Total:          348   98 304
+    Grand Total:          276    2 048
 
 
 *******************************************************************************
@@ -140,44 +134,35 @@ sh7Sxs_l.a: [5]
 
 Entry                      Address  Size  Type      Object
 -----                      -------  ----  ----      ------
-?main                   0x000080f0        Code  Gb  cmain.o [4]
-Abort_Handler           0x00008154        Code  Wk  vectortrap.o [4]
-CSTACK$$Base            0x00008160         --   Gb  - Linker created -
-CSTACK$$Limit           0x00018160         --   Gb  - Linker created -
-FIQ_Handler             0x00008154        Code  Wk  vectortrap.o [4]
-FIQ_STACK$$Base         0x0001c160         --   Gb  - Linker created -
-FIQ_STACK$$Limit        0x00020160         --   Gb  - Linker created -
-IRQ_Handler             0x00008154        Code  Wk  vectortrap.o [4]
-IRQ_STACK$$Base         0x00018160         --   Gb  - Linker created -
-IRQ_STACK$$Limit        0x0001c160         --   Gb  - Linker created -
-Prefetch_Handler        0x00008154        Code  Wk  vectortrap.o [4]
+?main                   0x000000c1        Code  Gb  cmain.o [5]
+CSTACK$$Base            0x20000000         --   Gb  - Linker created -
+CSTACK$$Limit           0x20000800         --   Gb  - Linker created -
 Region$$Table$$Base     0x00000000         --   Gb  - Linker created -
 Region$$Table$$Limit    0x00000000         --   Gb  - Linker created -
-SWI_Handler             0x00008154        Code  Wk  vectortrap.o [4]
-Undefined_Handler       0x00008154        Code  Wk  vectortrap.o [4]
-__cmain                 0x000080f0        Code  Gb  cmain.o [4]
-__exit                  0x00008131  0x14  Code  Gb  exit.o [5]
-__iar_program_start     0x00008098        Code  Gb  cstartup.o [4]
-__iar_return_from_swi   0x00008158   0x4  Code  Gb  xreturnswi.o [5]
+__cmain                 0x000000c1        Code  Gb  cmain.o [5]
+__exit                  0x000000f5  0x14  Code  Gb  exit.o [6]
+__iar_init_vfp          0x0000009d        Code  Gb  fpinit_M.o [4]
+__iar_program_start     0x00000109        Code  Gb  cstartup_M.o [5]
 __iar_systems$$module {Abs}
                         0x00000001        Data  Gb  command line/config [2]
-__low_level_init        0x00008121   0x4  Code  Gb  low_level_init.o [3]
-__vector                0x00008000        Data  Gb  cstartup.o [4]
-_call_main              0x00008108        Code  Gb  cmain.o [4]
-_exit                   0x00008144        Code  Gb  cexit.o [4]
-_main                   0x00008110        Code  Gb  cmain.o [4]
-exit                    0x0000812d   0x4  Code  Gb  exit.o [3]
-main                    0x0000803d  0x5c  Code  Gb  main.o [1]
+__low_level_init        0x000000df   0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000        Data  Gb  vector_table_M.o [5]
+_call_main              0x000000cd        Code  Gb  cmain.o [5]
+_exit                   0x000000e9        Code  Gb  cexit.o [5]
+_main                   0x000000db        Code  Gb  cmain.o [5]
+exit                    0x000000e3   0x4  Code  Gb  exit.o [3]
+main                    0x00000041  0x5c  Code  Gb  main.o [1]
 
 
 [1] = C:\Users\BLUE COM\Desktop\project\embeded_programming\lesson5\Debug\Obj
 [2] = command line
-[3] = dl7Sx_tln.a
-[4] = rt7Sx_tl.a
-[5] = sh7Sxs_l.a
+[3] = dl7M_tln.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
 
-     348 bytes of readonly  code memory
-  98 304 bytes of readwrite data memory
+    276 bytes of readonly  code memory
+  2 048 bytes of readwrite data memory
 
 Errors: none
 Warnings: none

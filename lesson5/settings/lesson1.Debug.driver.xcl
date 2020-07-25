@@ -1,16 +1,16 @@
 "--endian=little" 
 
-"--cpu=Cortex-A7" 
+"--cpu=Cortex-M4" 
 
-"--fpu=None" 
+"--fpu=VFPv4_SP" 
 
 "-p" 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\CONFIG\debugger\Broadcom\BCM2836RIFBG.ddf" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\arm\CONFIG\debugger\TexasInstruments\LM4F120H5QR.ddf" 
 
 "--semihosting" 
 
-"--device=BCM2836RIFBG" 
+"--device=LM4F120H5QR" 
 
 "--multicore_nr_of_cores=1" 
 
