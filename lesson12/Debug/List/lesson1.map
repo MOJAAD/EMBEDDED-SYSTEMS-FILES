@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.22.1.15669/W32 for ARM                28/Jul/2020  17:45:25
+# IAR ELF Linker V8.22.1.15669/W32 for ARM                28/Jul/2020  17:59:16
 # Copyright 2007-2018 IAR Systems AB.
 #
 #    Output file  =  
@@ -8,7 +8,7 @@
 #    Map file     =  
 #        E:\University-working\project\embeded_programming\lesson12\Debug\List\lesson1.map
 #    Command line =  
-#        -f C:\Users\BLUECO~1\AppData\Local\Temp\EWC344.tmp
+#        -f C:\Users\BLUECO~1\AppData\Local\Temp\EW7290.tmp
 #        (E:\University-working\project\embeded_programming\lesson12\Debug\Obj\main.o
 #        -o
 #        E:\University-working\project\embeded_programming\lesson12\Debug\Exe\lesson1.out

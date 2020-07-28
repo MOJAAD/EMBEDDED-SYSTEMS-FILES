@@ -1,5 +1,7 @@
 #include "stdint.h"
-#include "lm4f120h5qr.h"
+//#include "lm4f120h5qr.h"
+#include "tm4c_cmsis.h"
+//#include "core_cmlnstr.h"
 #include "delay.h"
 
 #define LED_RED   (1u << 1) 
@@ -49,16 +51,22 @@ int main()
   pp->x = 1u;
   wp->top_left = *pp;
   
-  SYSCTL_RCGCGPIO_R |= (1u << 5);
-  SYSCTL_GPIOHBCTL_R |= (1u << 5); //enable AHB for GPIO FAST
-  GPIO_PORTF_AHB_DIR_R |= (LED_RED | LED_BLUE | LED_GREEN);
-  GPIO_PORTF_AHB_DEN_R |= (LED_RED | LED_BLUE | LED_GREEN);
-  
-  GPIO_PORTF_AHB_DATA_BITS_R[LED_BLUE] = LED_BLUE;
+  //SYSCTL_RCGCGPIO_R |= (1u << 5);
+  //SYSCTL_GPIOHBCTL_R |= (1u << 5); //enable AHB for GPIO FAST
+  //GPIO_PORTF_AHB_DIR_R |= (LED_RED | LED_BLUE | LED_GREEN);
+  //GPIO_PORTF_AHB_DEN_R |= (LED_RED | LED_BLUE | LED_GREEN);
+  SYSCTL->RCGC2 |= (1u << 5);
+  SYSCTL->GPIOHSCTL |= (1u << 5);
+  GPIOF_HS->DIR |= (LED_RED | LED_BLUE | LED_GREEN);
+  GPIOF_HS->DEN |= (LED_RED | LED_BLUE | LED_GREEN);
+  //GPIO_PORTF_AHB_DATA_BITS_R[LED_BLUE] = LED_BLUE;
+  GPIOF_HS->DATA_Bits[LED_BLUE] = LED_BLUE;
   while(1){
-    GPIO_PORTF_AHB_DATA_BITS_R[LED_RED] = LED_RED;
+    //GPIO_PORTF_AHB_DATA_BITS_R[LED_RED] = LED_RED;
+    GPIOF_HS->DATA_Bits[LED_RED] = LED_RED;
     delay(1000000);
-    GPIO_PORTF_AHB_DATA_BITS_R[LED_RED] = 0;
+    //GPIO_PORTF_AHB_DATA_BITS_R[LED_RED] = 0;
+    GPIOF_HS->DATA_Bits[LED_RED] = 0;
     delay(500000);
     }
   return 0;

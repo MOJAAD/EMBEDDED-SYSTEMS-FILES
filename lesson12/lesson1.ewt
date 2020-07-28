@@ -2373,12 +2373,15 @@
         <name>$PROJ_DIR$\core-cm4.h</name>
     </file>
     <file>
+        <name>$PROJ_DIR$\core_cmInstr.h</name>
+    </file>
+    <file>
         <name>$PROJ_DIR$\lm4f120h5qr.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\main.c</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\tm4c-cmsis.h</name>
+        <name>$PROJ_DIR$\tm4c_cmsis.h</name>
     </file>
 </project>
