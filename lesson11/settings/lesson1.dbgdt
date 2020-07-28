@@ -1146,7 +1146,7 @@
                     <item>u16d</item>
                     <item>u32f</item>
                     <item>s32</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
